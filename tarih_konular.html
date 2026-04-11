@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarih Konuları - Ders Portalı</title>
+    <style>
+        /* Ana Tasarım Hatları */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            padding: 20px 0;
+            background-color: #2c3e50;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-container {
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: none;
+            font-size: 16px;
+        }
+
+        /* Başlık ve Navigasyon */
+        h1 { margin-top: 30px; color: #34495e; }
+        
+        .back-nav { margin-top: 20px; }
+        .back-link { text-decoration: none; color: #7f8c8d; font-weight: bold; }
+
+        /* 13 Konu İçin Grid Yapısı */
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px 0;
+            padding: 20px;
+        }
+
+        .topic-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-left: 5px solid #3498db; /* Konular için mavi vurgu */
+            display: flex;
+            align-items: center;
+        }
+
+        .topic-card:hover {
+            transform: translateX(10px);
+            background-color: #3498db;
+            color: white;
+            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .topic-number {
+            background: #ecf0f1;
+            color: #7f8c8d;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 15px;
+            font-size: 14px;
+        }
+
+        .topic-card:hover .topic-number {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="search-container">
+            <input type="text" placeholder="Tarih konuları içinde ara...">
+        </div>
+    </header>
+
+    <div class="back-nav">
+        <a href="tarihmain.html" class="back-link">← Geri Dön</a>
+    </div>
+
+    <h1>Tarih Konu Listesi</h1>
+
+    <div class="topics-grid">
+        <a href="islamiyetoncesi.html" class="topic-card"><span class="topic-number">1</span> İslamiyet Öncesi Türk Tarihi</a>
+        <a href="#" class="topic-card"><span class="topic-number">2</span> İlk Türk İslam Devletleri</a>
+        <a href="#" class="topic-card"><span class="topic-number">3</span> Türkiye Selçuklu Tarihi</a>
+        <a href="#" class="topic-card"><span class="topic-number">4</span> Osmanlı Devleti Kuruluş Dönemi</a>
+        <a href="#" class="topic-card"><span class="topic-number">5</span> Osmanlı Devleti Yükselme Dönemi</a>
+        <a href="#" class="topic-card"><span class="topic-number">6</span> Osmanlı Kültür ve Medeniyeti</a>
+        <a href="#" class="topic-card"><span class="topic-number">7</span> 17. Yüzyıl Osmanlı Tarihi</a>
+        <a href="#" class="topic-card"><span class="topic-number">8</span> 18. Yüzyıl Osmanlı Tarihi</a>
+        <a href="#" class="topic-card"><span class="topic-number">9</span> 19. Yüzyıl Osmanlı Tarihi</a>
+        <a href="#" class="topic-card"><span class="topic-number">10</span> 20. Yüzyılda Osmanlı Devleti</a>
+        <a href="#" class="topic-card"><span class="topic-number">11</span> Kurtuluş Savaşı Hazırlık Dönemi</a>
+        <a href="#" class="topic-card"><span class="topic-number">12</span> Milli Mücadele Cepheleri</a>
+        <a href="#" class="topic-card"><span class="topic-number">13</span> Atatürk İlke ve İnkılapları</a>
+    </div>
+
+</body>
+</html>

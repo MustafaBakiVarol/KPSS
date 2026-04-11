@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarih Bölümü - Ders Portalı</title>
+    <style>
+        /* Ana Sayfa ile Ortak Stiller */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f7f6; /* Hafif gri arka plan */
+        }
+
+        header {
+            width: 100%;
+            padding: 20px 0;
+            background-color: #2c3e50; /* Lacivert header */
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .search-container {
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        /* Bu Sayfaya Özel Kart Alanı */
+        .container {
+            margin-top: 50px;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            width: 280px; /* Biraz daha geniş kartlar */
+            height: 180px;
+            background-color: white;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column; /* İkon ve metni alt alta koymak için */
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        /* İkon Stilleri (Basit metin ikonları kullandım) */
+        .card-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* Renk Vurguları (Ana sayfadaki Tarih turuncusunu koruyoruz) */
+        .konular { border-bottom: 5px solid #3498db; } /* Konular için mavi */
+        .sorucevap { border-bottom: 5px solid #e67e22; } /* Soru-Cevap için turuncu */
+
+        h1 { margin-top: 40px; color: #34495e; font-size: 28px; }
+
+        /* Geri Dön Butonu */
+        .back-nav {
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .back-link {
+            text-decoration: none;
+            color: #7f8c8d;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="search-container">
+            <input type="text" placeholder="Tarih konuları veya soruları ara...">
+        </div>
+    </header>
+
+    <div class="back-nav">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+    </div>
+
+    <h1>Tarih Dersleri: Seçenekler</h1>
+
+    <div class="container">
+        <a href="tarih_konular.html" class="card konular">
+            <div class="card-icon">📖</div>
+            <div class="card-title">Konular</div>
+        </a>
+
+        <a href="tarih_sorucevap.html" class="card sorucevap">
+            <div class="card-icon">❓</div>
+            <div class="card-title">Soru-Cevap</div>
+        </a>
+    </div>
+
+</body>
+</html>
