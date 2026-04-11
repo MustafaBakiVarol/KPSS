@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konu Detayı - Tarih Portalı</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            line-height: 1.6;
+        }
+
+        header {
+            width: 100%;
+            padding: 15px 0;
+            background-color: #2c3e50;
+            text-align: center;
+            color: white;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+        }
+
+        .back-nav { margin-bottom: 20px; }
+        .back-link { text-decoration: none; color: #3498db; font-weight: bold; }
+
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background-color: #ecf0f1;
+            margin: 20px 0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #bdc3c7;
+            overflow: hidden;
+            border: 2px dashed #bdc3c7;
+        }
+
+        .text-content {
+            font-size: 18px;
+            color: #34495e;
+            text-align: justify;
+        }
+
+        /* --- ÖSYM BLOĞU --- */
+        .osym-box {
+            background-color: #fdf2f2;
+            border-left: 5px solid #e74c3c;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 10px 10px 0;
+            position: relative;
+        }
+
+        .osym-title {
+            color: #c0392b;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        .osym-question {
+            font-style: italic;
+            font-size: 17px;
+            color: #2c3e50;
+        }
+
+        .osym-year {
+            font-size: 13px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* --- FLASHCARD (BİLGİ KARTI) STİLLERİ --- */
+        .flashcard-wrapper {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .flashcard-container {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 400px;
+            height: 220px;
+            margin: 10px auto;
+            cursor: pointer;
+        }
+
+        .flashcard {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            border-radius: 15px;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            box-sizing: border-box;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-front {
+            background-color: #34495e;
+            color: white;
+            border: 2px solid #2c3e50;
+        }
+
+        .card-back {
+            background-color: #27ae60;
+            color: white;
+            transform: rotateY(180deg);
+            border: 2px solid #219150;
+        }
+
+        .card-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .card-text {
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .card-hint {
+            font-size: 12px;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+
+        .highlight-box {
+            background-color: #fff9eb;
+            border-left: 5px solid #f1c40f;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        footer { text-align: center; padding: 20px; color: #95a5a6; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>Celal Hoca'dan Dinlenilmiş Tarihin Ders Notları</h2>
+    </header>
+
+    <div class="content-container">
+        <div class="back-nav">
+            <a href="tarih_konular.html" class="back-link">← Konu Listesine Dön</a>
+        </div>
+
+        <h1>İlk Türk İslam Devletleri</h1>
+
+        <div class="image-placeholder">
+            <img src = "otukengorsel.jpg" alt=" Otuken Gorseli">
+            <span>Konu İlgili Harita veya Görsel</span>
+        </div>
+
+        <h1>TALAS SAVAŞI (751) Çin vs Abbasiler</h1>
+        <div class="text-content">
+            <p>
+                Bu savaş döneminde Çin ile Abbasiler savaşırken Karluklar Abbasiler'e yardım etmişler.
+                Bu sayede Abbasiler kazanmış.
+                Savaş sonrası bu Karluklar bakmışlar ki bu Abbasiler çok hoşgörülü, İslamiyete geçmeye karar vermişler.
+                 
+            </p>
+
+            <div class="osym-box">
+                <div class="osym-title">
+                    <span>🎓</span> ÖSYM NE SORDU?
+                </div>
+                <div class="osym-question">
+                    "ÖSYM, Talas Savaşı Arapların aleyhine sonuçlansaydı Müslümanlığa vurulan darbenin tamiri büyük sıkıntı olurdu diye bahsetmiş.
+                    Eğer bu savaşı kazanamasak belki de Orta Asya Budizm'i kabul etmek zorunda kalacaktı demiş."
+                </div>
+                <span class="osym-year">(KPSS - 2024)</span>
+            </div>
+
+            <div class="flashcard-wrapper">
+                <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+                    <div class="flashcard">
+                        <div class="card-front">
+                            <div class="card-label">Soru</div>
+                            <div class="card-text">Talas Savaşı kimler arasıda gerçekleşmiştir?</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-label">Cevap</div>
+                            <div class="card-text">Çin vs (Abbasiler + Karluklar) </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Savaştan sonra ilk defa Çin dışında Semerkant'da da kağıt üretilmeye başlanmış.
+                Savaştan sonra Türkler kitleler halinde İslamiyeti kabul ederek Müslümanları Bizans baskısından korumuş. 
+                İslamiyet çok geniş alana yayılmış.
+                Haçlı seferlerine karşı koyulmuş. 
+            </p>
+
+            <h1>ORTA ASYA'DA KURULAN İLK TÜRK İSLAM DEVLETLERİ</h1>
+
+            <h2>KARAHANLILAR</h2>
+            <p>
+                Orta Asya'da kurulan ilk Müslüman Türk devleti bunlardır.
+                Merkezi Balasagun, kurucusu Kül Bilge Kadir Han. 
+                İslamiyeti de Satuk Buğra Han döneminde kabul etmişler.
+                Resmi dilleri Türkçedir. 
+                Bunlar Orta Asya'da ilk kabul ettikleri için ilklerin geneli bunlardan çıkmış.
+                Medresedir (Semerkant Medresesi), ilk burslu öğrenci uygulamasıdır, ilk Türk-İslam yazılı eserleri, İslamiyeti devletin resmi dini olarak ilk kabul eden de budur, posta teşkitalı ilk olarak bunlarda var.
+                Fakat ikili teşkilat ise "son olarak" bunlarda var. 
+                Bunlar bir de Ribat adı verilen dönemin kervansaraylarını yaptırmışlardır ama bunların normal kervansaraylardan biraz farkı var. 
+                Güvenlik, dini yayma, yol emniyeti vs vs bunlarda var.
+                Bunlar da her Türk devletinde olduğu gibi ikiye ayrılmışlar sonra da yok olmuşlar.
+            </p>
+
+            <div class="highlight-box">
+                <strong>Önemli Not:</strong> Bunlarda yani Karahanlılarda genel olarak ilkler var. İslamiyet öncesinde "ilk" diye bir şey sorarsa genelde cevap burada aranabilir.
+            </div>
+
+            <div class="flashcard-wrapper">
+                <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+                    <div class="flashcard">
+                        <div class="card-front">
+                            <div class="card-label">Soru</div>
+                            <div class="card-text">Karahanlılar İslamiyeti Kimin Döneminde Kabul Ettiler?</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-label">Cevap</div>
+                            <div class="card-text">Satuk Buğra Han</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <h2>GAZNELİLER</h2>
+            <p>
+                Eskiden devletler ya kurulduğu yerden ya da kurucusundan ismini alırlarmış.
+                Bunlar kuruldukları yerden almışlar. Bunları <strong>Alp Tegin</strong> kurmuş. 
+                Yöneten en önemli hükümdar Gazneli Mahmut.
+                Abbasileri Şii'lerin baskısından kurtarmış diye Abbasi halifesi buna demiş ki sen alemin <strong>Aslanı ve Sultanısın</strong>.
+                Zaten Sultan ünvanını da ilk kullanan yine Gazneli Mahmut'tur.
+                Hindistana 17 defa sefer düzenlemişler. Hindistan kıymetli diye almak istemişler.
+                Ayrıca Sultan Mahmut bilime de değer vermiş herhalde. Çünkü <strong>Biruni</strong> için <strong>"Sarayımın En Kıymetli Hazinesi"</strong> demiş.
+                Başka bir Türk devleti olan Selçuklular ile 3 tane savaş yapmışlar.
+            </p>
+
+            <p>
+                1 - 1035 Nesa
+            </p>
+            <p>
+                1 - 1038 Serahs
+            </p>
+            <p>
+                3 - 1040 Dandanakan
+            </p>
+
+            <p>
+                E tabii Selçuklular bunları yenince doğal olarak yıkılma süreci başlamış. Gurlar diye saçma isimli bir devlet bunları yıkmış.
+                Zaten bunların iç işleri de karışıkmış yani isyanlar falan varmış. E adamlar büyük devlet o yüzden coğrafya geniş, etnik köken çok.
+            </p>
+
+            <div class="highlight-box">
+                <strong>Önemli Not:</strong> Bu Dandanakan ve Sultan ünvanı çok soruluyor. Denemelerde de var.
+            </div>
+
+            <h1>BÜYÜK SELÇUKLU DEVLETİ</h1>
+
+            <p>
+                İranda kuruldukları için ana dilleri Türkçe değil.
+                İlk olarak 1048 Pasinler ile Anadolunun kapısını açtılar. Gürcü Kralı Laparit de bu sırada esir düştü.
+                Bu savaş cihad özelliği taşır.
+                Sonra Tuğrul Bey Bağdat'a sefere gitmiş. Bakmış o coğrafyada Şii Büveyhoğulları var. Hani şu Abbasi Halifesini zora sokanlar.
+                Bunlara direkt son vermiş. Halife de buna demiş ki: sen, <strong>Doğunun ve Batının Sultanısın</strong>.
+                Bunlar tabii Pasinlerden sonra bakmışlar Anadolu iyi. Demişler o yoldan devam.
+                1064'de Sultan Alparsan, Ani'yi fethetmiş. Sonrasında Halife'de Alparslan'a <strong>Ebul Feth</strong> demiş. 
+                Alparslan zaten geleceği yere kadar gelmişken Anadoluya da artık girmişler. Kilidi kırmıştık zaten, şimdi de kapıyı açtık.
+            </p>
+            <p>
+                1071 Malazgirt'de Bizansı yendik. Bizans kralı Diyojeni esir aldık. Anadoluda ilk Türk İslam devletleri bu süreçten sonra kuruldu. 
+                Bizans bakmış Pasinlerde bunlar bizi yendi, Malazgirt'de de yendi. Demişler biz papadan yardım isteyelim. E istemişler.
+                Papa da yardım edince Haçlı seferleri başlamış. Sonra Halife bakmış Alparsan bayağı iyi <strong>İslam Ülkelerinin Sultanısın</strong> demiş.
+                Büyük Selçuklu en parlak zamanını Sultan Melikşah döneminde yaşamış.
+            </p>
+
+            <div class="highlight-box">
+                <strong>Önemli Not:</strong> Alparsan, Vezir Nizamülmülkü getirmiş bir de o dönem kurultayda olan Türkleri çıkarmış.
+                Yerine başka devletten insanları koymuş. 
+            </div>
+
+            <p>
+                Madem bu kadar iyilerdi bunlar niye yıkıldı? Güzel soru. O dönem Hasan Sabbah gibi bir adam var.
+                Haşhaşilik (Batinilik) hareketi var. Selçuklunun adamları sürekli öldürülüyor. Sürekli bi suikast.
+                Taht kavgaları var. Klasik Türk devleti zaten. Sonrasında eğitim için gönderilen Melik (şehzade) ve eğitmeni olan atabey kafalarına göre hareket edince tabii devlet yıkılmış yani.
+                Bir de üstüne 1141 Katvan Savaşını kaybedince çok çok çok ağır yaralanmışlar. Başa en son gelen Sultan Sencer de ölünce zaten bitmişler.  
+            </p>
+
+
+            <div class="flashcard-wrapper">
+                <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+                    <div class="flashcard">
+                        <div class="card-front">
+                            <div class="card-label">Soru</div>
+                            <div class="card-text">Sultan Alparslan'ın lakabı nedir?</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-label">Cevap</div>
+                            <div class="card-text">Ebul Feth</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard-wrapper">
+                <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+                    <div class="flashcard">
+                        <div class="card-front">
+                            <div class="card-label">Soru</div>
+                            <div class="card-text">Doğunun ve Batının Hükümdarı kimdir?</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-label">Cevap</div>
+                            <div class="card-text">E eşek değilsen Tuğrul Bey dersin.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard-wrapper">
+                <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+                    <div class="flashcard">
+                        <div class="card-front">
+                            <div class="card-label">Soru</div>
+                            <div class="card-text">Anadolunun kilidi hangi savaşla kırıldı, kapısı hangi savaşla açıldı?</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-label">Cevap</div>
+                            <div class="card-text">1048 Pasinler ve 1071 Malazgirt.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h1>MISIRDA KURULAN TÜRK-İSLAM DEVLETLERİ (TAEM)</h1>
+
+            <h2>TOLUNOĞULLARI</h2>
+
+            <p>
+                İsimler kronolojik olacak. İlk kurulan da Tolunoğulları. Adını kurucusundan almış, Tolunoğlu Ahmed.
+                Abbasilerin zayıflamasıyla onların bünyesinden ayrılarak kurulmuş ama bunlara da Abbasiler son vermiş.
+                Maristan denen hastane yapmışlar.
+            </p>
+
+            <h2>AKŞİTLER</h2>
+
+            <p>
+                Bunlar da ikinci olarak kurulmuş. Muhammed bin Tügaç kurmuş
+                Bunlar da Abbasilerden ayrılarak kurulmuş. 
+                Hicaz bölgesine sahip olan ilk Türk-İslam devleti bunlar. Fatimiler tarafından yıkılmışlar.
+            </p>
+
+            <h2>EYYÜBİLER</h2>
+
+            <p>
+                Selahaddin Eyyübi (Hadimul - Haremeyn, Şarkın en sevgili sultanı) kurmuş. 1187 Hittin savaşıyla haçlıları yeniş Kudüs'ü almışlar.
+            </p>
+
+            <h2>MEMLÜKLER</h2>
+
+            <p>
+                Bunlarda Kut anlayışının istisnası var. 
+                Güçlü askerler de yönetime geçmişler de bunların asıl olayı Moğolları iki defa yenmeleri.
+                1260'da Ayn Calud ve 1277 Elbistan savaşlarında Moğolları yendiler.
+                1516 Mercidabık ve 1517 Ridaniye savaşlarıyla Osmanlı tarafından ortadan kaldırıldılar. 
+            </p>
+
+            <h2>DİLMAÇOĞULLARI</h2>
+
+            <p>
+                Bitliste kuruldular. Bitlis Ulu Camiyi yapmışlar.
+            </p>
+
+            <h2>DANİŞMENTLİLER</h2>
+
+            <p>
+                Danişment Bey kurdu.
+                Sivas - Tokat - Malatya tarafında kuruldular.
+                Niksar Yağıbasan Medresesi ve Danişmendname mutlaka bilinecek. Çünkü Anadoluda yapılan ilk medrese.
+                Kayseri Ulu Cami var. 
+            </p>
+
+            <h2>SALTUKLAR</h2>
+
+            <p>
+                Erzurum ve çevresinde kuruldular. Anadoluda kurulan ilk Türk-İslam devletidir. 
+                Kale Camii, Tepsi Minare, Mama Hatun, Üç Kümbet, Micingerd Kalesi bilinecek.
+            </p>
+
+            <h2>MENGÜCEKLER</h2>
+
+            <p>
+                Divriği ve Erzincanda. Mengücek Gazi kurdu. 
+                Divriği Ulu Camii (1985'de UNESCO korudu).
+                Anadolu Selçuklu tarafından yıkıldılar.
+            </p>
+
+            <h2>ARTUKLAR</h2>
+
+            <p>
+                Hasankeyf - Harput - Mardin. Artuk Bey kurdu. 
+                Hasankeyf, Malabadi Köprüsü, Hatuniye Medresesi, Koçhisar Ulu Camii bilinecek. El Cezeri de buradan. Sibernetiğin babası.
+                Anadolu Selçuklu yıkmıştır.
+            </p>
+
+            <h2>ÇAKA</h2>
+
+            <p>
+                İzmir'de Çaka Bey tarafından kuruldu. İlk Türk denizcisi Çaka Beydir.
+                1081 yılı Türkiye Deniz Kuvvetleri Komutanlığının kuruluş yılıdır.
+            </p>
+
+
+            <div class="flashcard-wrapper">
+                <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+                    <div class="flashcard">
+                        <div class="card-front">
+                            <div class="card-label">Soru</div>
+                            <div class="card-text">Mısır'da kurulan Türk - İslam devletlerinin kronlojik sıralaması nasıldır?</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-label">Cevap</div>
+                            <div class="card-text">Tolunoğulları, Akşitler, Eyyübiler, Memlükler</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>Önemli Not:</strong> Yani ben bir defa falan kronolojik sorulduğunu gördüm.
+                Genel kültür açısından da iyi bilgiler.
+                Denemelerde de pek görmedim.
+            </div>
+
+            <h1>ORTA ASYA VE YAKIN COĞRAFYADAKİ DİĞER TÜRK DEVLETLERİ</h1>
+
+            <h2>Akkoyunlar</h2>
+
+            <p>
+                Bunlar Şii'dir. En önemli eleman Uzun Hasan. Kuran-ı Türkçeye çevirdiler. Unutma ilkler Karahanlılardı.
+                Dede Korkut hikayelerini yazıya geçirdiler.
+                1402 Ankara savaşından sonra güçlenip Osmanlıya kafa tutmuşlar ama 1473 Otlukbeli savaşında Fatih Sultan Mehmet affetmemiş.
+                Ali Kuşçu buraya ait. 
+            </p>
+
+            <h2>Karakoyunlar</h2>
+
+            <p>
+                Hoca Bayram, Van Erçiş'de kurmuş. 
+                Akkoyunlar Karakoyunları yıkmış. Şaka değil. 
+            </p>
+
+            <h2>Safeviler</h2>
+
+            <p>
+                İran'da kurulmuş, Şiiler.
+                Yavuz Sultan Selim 1514'de Çaldıran'da öttürmüş. 
+            </p>
+
+            <h2>Babürler</h2>
+
+            <p>
+                Hindistan. Babür Şah kurmuş. Şu meşhur, Cihan Şah'ın eşi için yaptırdığı Tac Mahal burada.
+                1858'de İngiltere yıkmış.
+            </p>
+
+            <h2>Harzemşahlar</h2>
+
+            <p>
+                Demişler ki, biz Büyük Selçuklunun devamıyız.
+                Sonra Cengiz Han'da gelmiş Otrar Faciasını yapmış. Zaten
+                1230'da Yassıçemen ile Anadolu Selçuklu ile karşı karşıya gelmişler. Bunlar normalde Moğol İlhanlı ile ASD arasında tampon bölge.
+                E tampon bölgeyi Moğol ortadan kaldırınca ASD ile Moğol komşu olmuş. Sıra kime gelmiş? Anadolu Selçukluya gelmiş.
+            </p>
+
+            <h2>Timur</h2>
+
+            <p>
+                Timur Türk ama halk Moğol. 1402'de bizi Ankara'da yenen kişi Timurdur.
+                Yıldırım Bayezid'i yenidikten sonra Osmanlı Fetret Devrine girdi.
+                Bir de Altınorda denen bir Türk devletini yıkarak Rusların güçlenmesini sağladı.
+            </p>
+
+            <h2>Cengizhan (Moğollar)</h2>
+
+            <p>
+                Temuçin - Cengizhan. 
+                Karakurumda kuruldu. 
+            </p>
+
+            <div class="flashcard-wrapper">
+                <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+                    <div class="flashcard">
+                        <div class="card-front">
+                            <div class="card-label">Soru</div>
+                            <div class="card-text">Ayn Calud ve Elbistan savaşı sonucunda Moğolları yenen devlet kimdir?</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-label">Cevap</div>
+                            <div class="card-text">E zaten bir tane var, Memlükler. Bildim triplerine girme yani.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard-wrapper">
+                <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+                    <div class="flashcard">
+                        <div class="card-front">
+                            <div class="card-label">Soru</div>
+                            <div class="card-text">Ridaniye ve Mercidabık savaşları ile son bulan devlet kimdir?</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-label">Cevap</div>
+                            <div class="card-text">Bu da Memlükler.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard-wrapper">
+                <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+                    <div class="flashcard">
+                        <div class="card-front">
+                            <div class="card-label">Soru</div>
+                            <div class="card-text">Harzemşahların Anadolu Selçuklu tarafından yenilmesi nasıl bir sonuç ortaya çıkarmıştır?</div>
+                        </div>
+
+                        <div class="card-back">
+                            <div class="card-label">Cevap</div>
+                            <div class="card-text">Harzemşahların tampon bölge görevi ortadan kalkınca Moğol ve ASD komşu oldular. Sonuçta Moğol geldi ASD'yi yıktı.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>Önemli Not:</strong> Bu tampon bölge yorumu çok önemli. Bunu birçok kaynakta gördüm.
+                Anadolu Selçuklu'dan bazı yerlerde Türkiye Selçuklu diye de bahsedilebiliyor. 
+            </div>            
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        © 2026 Kendim ve arkadaşlarımın Tarih çalışması için yaptığım bir web sitesidir. Bilgilerin asla bir garantisi yoktur - İyi Çalışmalar!
+    </footer>
+
+</body>
+</html>
