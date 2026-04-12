@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konu Detayı - Tarih Portalı</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            line-height: 1.6;
+        }
+
+        header {
+            width: 100%;
+            padding: 15px 0;
+            background-color: #2c3e50;
+            text-align: center;
+            color: white;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+        }
+
+        .back-nav { margin-bottom: 20px; }
+        .back-link { text-decoration: none; color: #3498db; font-weight: bold; }
+
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            position: relative; /* önemli */
+            overflow: hidden;
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-placeholder span {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            background: rgba(0,0,0,0.6);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .text-content {
+            font-size: 18px;
+            color: #34495e;
+            text-align: justify;
+        }
+
+        /* --- ÖSYM BLOĞU --- */
+        .osym-box {
+            background-color: #fdf2f2;
+            border-left: 5px solid #e74c3c;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 10px 10px 0;
+            position: relative;
+        }
+
+        .osym-title {
+            color: #c0392b;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        .osym-question {
+            font-style: italic;
+            font-size: 17px;
+            color: #2c3e50;
+        }
+
+        .osym-year {
+            font-size: 13px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* --- FLASHCARD (BİLGİ KARTI) STİLLERİ --- */
+        .flashcard-wrapper {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .flashcard-container {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 400px;
+            height: 220px;
+            margin: 10px auto;
+            cursor: pointer;
+        }
+
+        .flashcard {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            border-radius: 15px;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            box-sizing: border-box;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-front {
+            background-color: #34495e;
+            color: white;
+            border: 2px solid #2c3e50;
+        }
+
+        .card-back {
+            background-color: #27ae60;
+            color: white;
+            transform: rotateY(180deg);
+            border: 2px solid #219150;
+        }
+
+        .card-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .card-text {
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .card-hint {
+            font-size: 12px;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+
+        .highlight-box {
+            background-color: #fff9eb;
+            border-left: 5px solid #f1c40f;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        footer { text-align: center; padding: 20px; color: #95a5a6; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>Celal Hoca'dan Dinlenilmiş Tarihin Ders Notları</h2>
+    </header>
+
+    <div class="content-container">
+        <div class="back-nav">
+            <a href="tarih_konular.html" class="back-link">← Konu Listesine Dön</a>
+        </div>
+
+        <h1>Türkiye Anadolu Selçuklu Devleti</h1>
+
+        <div class="image-placeholder">
+            <img src = "SELCUKLU.jpg" alt=" Otuken Gorseli">
+        </div>
+
+        <div class="text-content">
+            <h2>Kutalmışoğlu Süleyman Şah</h2>
+            <p>
+                Anadolu Selçuklu, diğer adıyla Türkiye Selçuklu Devleti 1075 tarihinde <strong>Kutalmışoğlu Süleyman Şah</strong> tarafından iznikte kuruldu.
+                Bizanstan Anadolu yakasını aldılar.
+                Süleyman Şah, Halifeden <strong>Menşur</strong> lakabını almış. 
+                Türkiye'ye ait ama Türkiye topraklarında olmayan <strong>Caber Kalesine</strong> gömülmüştür.
+            </p>
+
+            <h2>I. Kılıçarslan</h2>
+            <p>
+                <li>Yani kısmen olan fetret devrine son vermiştir.</li>
+                <li><strong>I. Haçlı Seferi</strong> sırasında gerçekleşen <strong>Dorileon Savaşında</strong> yenildik. 
+                Bu sefer, amacına ulaşan tek Haçlı Seferi’dir.</li>
+                <li>Bu gelişmeler sonucunda başkent İznik’ten <strong>Konya’ya</strong> taşındı.</li>
+            </p>
+
+            <div class="highlight-box">
+                <strong>Önemli Not:</strong> Haçlı seferlerinin sıralaması ve başkentin taşınma olayı sık sık deneme ve kitaplarda geliyor. 
+            </div>
+
+            <h2>I. Mesud</h2>
+            <p>
+                <strong>II. Haçlı Seferi</strong> bu dönemde yapıldı. Eskişehir bölgesinde karşılaştık ve haçlıları geri yolladık.
+                Bu dönemde bakır para bastırıldı.
+                En önemlisi ise bu dönemde Bizans kaynakları ilk defa Türk isminden <strong>Turqia</strong> olarak bahsettiler.
+            </p>
+
+            <div class="highlight-box">
+                <strong>Önemli Not:</strong> Türklerden, Bizans kaynaklarında ilk defa Turqia olarak bahsettiklerini ve bu olayın
+                I. Mesud zamanında olduğunu bilmek lazım. 
+            </div>
+
+            <h2>II. Kılıçarslan</h2>
+            <p>
+                <li>Bu dönemde Bizans ile meşhur <strong>1176 Miryokefalon (Yurttutan - Kumdanlı)</strong> savaşı yapıldı.
+                Hani Pasinler ile kilidi kırıp Malazgir ile kapıyı açtığımız savaşlar vardı ya, bu Miryokefalon ile de <strong>Anadolunun Tapusunu</strong> aldık.</li>
+
+                <li>Anadolu artık Türk yurdu haline geldi. Bizans bu savaştan sonra demiş ki, biz daha bu Türkleri atamayız Anadoludan.</li>
+                <li>II. Kılıçarslan aynı zamanda altın para da bastırmıştır. Bu durum da ekonomik olarak bir gelişme olduğunu gösterebilir.</li>
+            </p>
+
+            <div class="highlight-box">
+                <strong>Önemli Not:</strong> Miryokefalon, Pasinler, Malazgirt. Bu üçlemeyi kronolojik olarak bilmek lazım. 
+            </div>
+
+            <h2>Gıyaseddin - Rükneddin - İzzettin</h2>
+            <p>
+                Bu üçleme döneminde <strong>İran - Fars</strong> etkisinde kalındığı zaten isimlerden belli.
+                Bu dönemlerde <strong>Antalya - Sinop</strong> alınmış. 
+                Bir de Gıyaseddin, denizcilik faaliyetleri yürütmüş.
+            </p>
+
+            <h2>Alaaddin Keykubad</h2>
+            <ul>
+                <li>Anadolu Selçuklu'nun <strong>en parlak dönemidir</strong>.
+                <strong>Alaiye (Alanya)</strong> ve <strong>Kırım'ın Suğdak Limanı</strong> bu dönemde alınmıştır.</li>
+
+                <li>Bu dönemde ticaret canlansın diye kervansaray ve hanlar yapılmış. Gümrük vergileri düşük tutulmuş.</li>
+                <li>Hatta ticaret artsın diye sigorta uygulaması bile başlatmışlar.
+                    Devlet malı garantilemiş, malın bana emanet demiş ama doğudaki kaleleri onarmayı da unutmamışlar.</li>
+
+                <li>Eyyubilerle ittifak kurmuşlar. </li>
+            </ul>
+
+            <p>
+                Biraz büyüyünce tabi bir egemenlik anlayışı gelmiş. Biz bu <strong>Harzemşahları</strong> alalım demişler.
+                Almışlar, <strong>1230 Yassıçemen Savaşıyla</strong> almışlar almasına da bir şeyi unutmuşlar. Bu Harzemşahlar tampon bölgeydi.
+                Kimle kim arasındaydı? Moğol ve ASD. E şimdi tampon bölge aradan kalkınca Moğol ve ASD komşu oldu mu, oldu.
+                Artık istilaya açık hale geldi. Sonrasında da <strong>1243 Kösedağ Savaşıyla</strong> ASD yenildi ama yıkılmadı, Moğola bağlı hale geldi.
+            </p>      
+
+            <h2>II. Gıyaseddin</h2>
+
+            <ul>
+                <li>Babası Alaaddini öldürerek tahta geldi.</li>
+                <li>Çok hayırlı bir evlattır.</li>
+                <li>Vezir Saadettin Köpek ile beraber öldürdüler.</li>
+                <li>Sonrasında <strong>1240 yılında Baba İshak isyanı</strong> çıktı.</li>
+                <li>Ben bu isyani şöyle hatırlıyorum.
+                    Zamanında ASD, halka demiş ki size kılıç hakkı veriyorum.
+                    Yani fethettiğiniz yer sizindir.
+                    Orada bir hayat kurun. E halk da bunu yapmış.
+                    Sonrasında ASD Abbasileri bir dönem bünyesine mi alıyor ne yapıyorsa artık.
+                    Bu kılıç hakkı olan yerlere diyor ki, baba siz burayı boşaltın. 
+                    Abbasilere burayı verelim. E halk da kılıç hakkıyla aldığı yeri niye versin. İsyan etmişler.</li>
+                <li><strong>Anadoludaki ilk isyandır</strong>.</li>
+                <li><strong>Türk tarihinin ilk dini nitelikli toplumsal isyanıdır</strong>.</li>
+            </ul>
+
+            <p>
+                Baba İshak İsyanından sonra üstüne bir de 1243 Kösedağ Savaşı olunca ASD Moğola bağımlı hale gelmiş.
+                İsyan ve üstüne başarısız bir savaş süreci çok hızlandırmış. Sonrasında Anadoluda Türk Siyasi Birliği bozulmuş.
+                II. Beylikler dönemi başlamış, hani şu sonu oğulları ile bitenler.
+            </p>
+
+            <div class="highlight-box">
+                <strong>Önemli Not:</strong> Alanya ve Kırım'ın Suğdak Limanı önemli. Savaş kronolojileri de önemli.
+                Baba İshak İsyani da ilk dini nitelikli isyan olduğu için bilmekte fayda var.  
+            </div>
+
+            <div class="highlight-box">
+                <strong>Önemli Not:</strong> Bu dönemde deniz ticaretinin bir tık canlandırılmaya başlanıldığı yorumu yapmak lazım. 
+            </div>
+
+            <h2>II. Beylikler Dönemi (Anadoluda Kurulan İkinci Türk Devletleri)</h2>
+
+            <p>
+                <strong>Karamanoğulları</strong>, demişler ki biz Selçuklunun varisiyiz. O dönem zaten güçlüler.
+                Karamanoğlu Mehmet Bey Türkçeyi resmi dil yapmış.
+                Osmanlı ile Haçlılar savaşırken de gelip Osmanlıyı arkadan vurmuş. 
+            </p>
+
+            <p>
+                <strong>Karesioğulları</strong>, Balıkesir ve çevresinde kurulmuşlar. Osmanlıya <strong>ilk</strong> katılan beyliktir.
+                Osmanlı bu beylik sayesinde donanmaya sahip olmuş.
+            </p>
+
+            <p>
+                <strong>Hamitoğulları</strong>, Isparta - Antalya çevresi. Osmanlı bunları satın almış.
+            </p>
+
+            <p>
+                <strong>Germiyanoğulları</strong>, Kütahya.
+            </p>
+
+            <p>
+                <strong>Dulkadiroğulları</strong>, Osmanlının <strong>son</strong> aldığı beyliktir.
+            </p>
+
+            <p>
+                <strong>Çobanoğlu</strong>, Osmanlı kuruluşta buraya bağlıydı ve vergi ödüyorduk.
+            </p>
+
+        <div class="image-placeholder">
+            <img src = "ikincibeyliklerdönemi.jpg" alt=" Otuken Gorseli">
+        </div>
+
+            <div class="flashcard-wrapper">
+                <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+                    <div class="flashcard">
+                        <div class="card-front">
+                            <div class="card-label">Soru</div>
+                            <div class="card-text">Anadolu Selçuklu Devleti hangi padişah döneminde başkenti İznik'den Konya'ya taşımıştır?</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-label">Cevap</div>
+                            <div class="card-text">I. Kılıçarslan</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard-wrapper">
+                <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+                    <div class="flashcard">
+                        <div class="card-front">
+                            <div class="card-label">Soru</div>
+                            <div class="card-text">Anadolu Selçuklu Devleti hangi liman şehirleri alınmıştır?</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-label">Cevap</div>
+                            <div class="card-text">Antalya - Sinop - Suğdak</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard-wrapper">
+                <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+                    <div class="flashcard">
+                        <div class="card-front">
+                            <div class="card-label">Soru</div>
+                            <div class="card-text">Anadolu Selçuklu Devleti hangi savaştan sonra Moğollar tarafından istilaya açık hale gelmiştir?</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-label">Cevap</div>
+                            <div class="card-text">Elli kere yazdım, 1230 Yassıçemen</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flashcard-wrapper">
+                <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+                    <div class="flashcard">
+                        <div class="card-front">
+                            <div class="card-label">Soru</div>
+                            <div class="card-text">Anadolu Selçuklu Devleti hangi savaştan sonra Moğollara bağlı hale gelmiştir?</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-label">Cevap</div>
+                            <div class="card-text">1243 Kösedağ</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flashcard-wrapper">
+                <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+                    <div class="flashcard">
+                        <div class="card-front">
+                            <div class="card-label">Soru</div>
+                            <div class="card-text">Anadoluda çıkan dini nitelikli ilk isyan nedir?</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-label">Cevap</div>
+                            <div class="card-text">Baba İshak İsyanı</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard-wrapper">
+                <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+                    <div class="flashcard">
+                        <div class="card-front">
+                            <div class="card-label">Soru</div>
+                            <div class="card-text">Osmanlıya ilk katılan beylik?</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-label">Cevap</div>
+                            <div class="card-text">Karesioğulları</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Kendim ve arkadaşlarımın Tarih çalışması için yaptığım bir web sitesidir. Bilgilerin asla bir garantisi yoktur - İyi Çalışmalar!
+    </footer>
+
+</body>
+</html>
