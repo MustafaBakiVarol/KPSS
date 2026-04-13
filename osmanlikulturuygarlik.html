@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konu Detayı - Tarih Portalı</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            line-height: 1.6;
+        }
+
+        header {
+            width: 100%;
+            padding: 15px 0;
+            background-color: #2c3e50;
+            text-align: center;
+            color: white;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+        }
+
+        .back-nav { margin-bottom: 20px; }
+        .back-link { text-decoration: none; color: #3498db; font-weight: bold; }
+
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            position: relative; /* önemli */
+            overflow: hidden;
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-placeholder span {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            background: rgba(0,0,0,0.6);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .text-content {
+            font-size: 18px;
+            color: #34495e;
+            text-align: justify;
+        }
+
+        /* --- ÖSYM BLOĞU --- */
+        .osym-box {
+            background-color: #fdf2f2;
+            border-left: 5px solid #e74c3c;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 10px 10px 0;
+            position: relative;
+        }
+
+        .osym-title {
+            color: #c0392b;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        .osym-question {
+            font-style: italic;
+            font-size: 17px;
+            color: #2c3e50;
+        }
+
+        .osym-year {
+            font-size: 13px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* --- FLASHCARD (BİLGİ KARTI) STİLLERİ --- */
+        .flashcard-wrapper {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .flashcard-container {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 400px;
+            height: 220px;
+            margin: 10px auto;
+            cursor: pointer;
+        }
+
+        .flashcard {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            border-radius: 15px;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            box-sizing: border-box;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-front {
+            background-color: #34495e;
+            color: white;
+            border: 2px solid #2c3e50;
+        }
+
+        .card-back {
+            background-color: #27ae60;
+            color: white;
+            transform: rotateY(180deg);
+            border: 2px solid #219150;
+        }
+
+        .card-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .card-text {
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .card-hint {
+            font-size: 12px;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+
+        .highlight-box {
+            background-color: #fff9eb;
+            border-left: 5px solid #f1c40f;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        footer { text-align: center; padding: 20px; color: #95a5a6; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>Celal Hoca'dan Dinlenilmiş Tarihin Ders Notları</h2>
+    </header>
+
+    <div class="content-container">
+        <div class="back-nav">
+            <a href="tarih_konular.html" class="back-link">← Konu Listesine Dön</a>
+        </div>
+
+        <h1>Türkiye Anadolu Selçuklu Devleti</h1>
+
+        <div class="image-placeholder">
+            <img src = "osmanlıharita.jpg" alt=" Otuken Gorseli">
+        </div>
+
+        <div class="text-content">
+            <h2>A - Devlet Yönetimi</h2>
+            <ul>
+                Osmanlı Devletinde yönetim anladımda; Monarşi, Teokrasi görülmüştür.
+                Özellikle Teokrasi, Yavuz Sultan Selim Halifeliği aldıktan sonra görülmüştür.
+                Padişah yasama-yürütme-yargı erkidir. 
+            </ul>
+
+            <h3>A.1 - Yönetimde Veraset</h3>
+            <ul>
+                <li>İlk başta Osman Bey, Ülke hükümdar ve ailesinin ortak malıdır demiş.</li>
+                <li>Ardından gelen I. Murat ise ülkenin hükümdar ve oğullarına ait olduğunu söylemiş.</li>
+                <li>Fatih Sultan Mehmet ise ülkenin padişaha ait olduğunu söylemiş.</li>
+                <li>I. Ahmed ile bu olay biraz daha netleştirilmiş. Ülkeyi en büyük ve en akıllı erkek üye yönetir demiş.</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>Önemli Not:</strong> Osmanlıda yönetimi kimin devam ettireceğinin belli olmaması birçok soruna yol açmıştır.
+                Dönemlerinde bunun önüne geçilmeye çalışılmıştır. Mesela Fatih Sultan Mehmed, Nizamı Alem için kardeş katli helaldir demiştir.
+                Bu tarz sorunların önüne geçilmediği zaman Cem Sultan gibi olayların gerçekleşeceğini unutmamak lazım.  
+            </div>
+
+            <h3>A.2 - Divan</h3>
+            <ul>
+                <li>Divanı Hümayun diye de geçer. Bugünki TBMM'ye denktir. Orhan Bey kurmuştur.</li>
+                <li>Fatih'e kadar Divana padişah başkanlık etmişken Fatih'den sonra Sadrazamlar başkanlık etmiştir.</li>
+                <li>Burada alınan kararlara hüküm, bu hükümlerin yazıldığı defterin adı ise muhimmedir. Muhimmeyi nişancı tutar.</li>
+                <li>Yargı ve idari organdır</li>
+                <li>Kubbe altında toplanır. Buraya birun denir.</li>
+                <li>Üyeleri: Padişah, Sadrazam, Kubbe Altı Veziri, Defterdar, Kazasker, Nişancı, Reisülküttab, Kaptanırderya, Yeniçeri Ağası, Şeyhülislamdır.</li>
+            </ul>
+
+            <h3>A.3 - Taşra Teşkilatı</h3>
+            <ul>
+                <li>Eyalet -> Sancak ->  Kaza -> Köy, şeklindedir.</li>
+                <li>Beylerbeyi -> Sancakbeyi -> Kadı -> Kethüda, Yiğitbaşı, Naip, yönetir.</li>
+                <li>Abdülaziz'in Vilayet Nizamnamesi ile beraber bu sistem de değişmiştir.</li>
+                <li>Eyalet -> Liva ->  Kaza -> Nahiye -> Köy, şeklindedir.</li>
+                <li>Vali -> Kaymakam ->  Kaza Müdürü -> Nahiye Müdürü -> Muhtar, şeklinde de yönetilmiştir.</li>
+            </ul>
+
+            <h3>A.4 - Eyaletler</h3>
+            <ul>
+                <li>Eyaletler Salyaneli (Uzak) ve Salyanesiz (Yakın) olarak ikiye ayrılmıştır.</li>
+                <li>Uzak yerlerden genelde vergi nakit olarak alınmış.</li>
+                <li>Buralar, Mısır, Bağdat, Yemendir, Trablusgarp, Tunus, Cezayir.</li>
+                <li>Ulaşım zor olduğu için nakit alınıyor. Git, gel 8 ay sürüyor yani. Gittin geldin hadi bir daha falan zor iş. O yüzden yıllık alınıyor.</li>
+                <li>Salyanesizler ise yakın yerler. Vergi tımar olarak alınır. Cebelü denen askerler tımar sonucunda devlete verilir.</li>
+                <li>Anadolu ve Rumelide bu sistem uygulanmıştır. Yakın yerler kontrolü kolay yerler.</li>
+            </ul>
+
+            <h3>A.5 - İmtiyazlı Yerler</h3>
+            <ul>
+                <li>Buralar ayrıcalıklı yerlerdir.</li>
+                <li>Bazılar asker vermez vergi vermez. Bazıları vergi verir asker vermez. Hicaz mesela ne vergi verir ne asker verir.</li>
+                <li>Mekke, Medine, Taif, Hayber imtiyazlı eyaletlerdir.</li>
+                <li>Eflak - Boğdan - Erdel yöneticilerine voyvoda denir.</li>
+                <li>Eflak ve Boğdan Osmanlıda memleketeyn diye geçer.</li>
+                <li>Kırım yöneticilerine han ya da giray denir.</li>
+                <li>Mekke şerifliğine emir denir.</li>
+            </ul>
+            
+            <h3>A.5 - Hukuk</h3>
+            <ul>
+                <li></li>
+            </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        © 2026 Kendim ve arkadaşlarımın Tarih çalışması için yaptığım bir web sitesidir. Bilgilerin asla bir garantisi yoktur - İyi Çalışmalar!
+    </footer>
+
+</body>
+</html>
